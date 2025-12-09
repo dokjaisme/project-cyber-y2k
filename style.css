@@ -111,10 +111,10 @@ h1, h2, .glitch-text, .start-btn {
 }
 
 .profile-layout h2::after {
-    content: "◀ P1"; position: absolute; left: 100%; top: 50%;
+    content: "◀ P1"; position: absolute; left: 50%; top: 73%;
     transform: translateY(-50%); margin-left: 15px;
     background: red; color: white; font-family: 'Press Start 2P'; font-size: 0.6rem;
-    padding: 3px 6px; border: 2px solid white; opacity: 0; pointer-events: none;
+    padding: 10px 5px; border: 2px solid white; opacity: 0; pointer-events: none;
 }
 
 .window:hover h2::after {
