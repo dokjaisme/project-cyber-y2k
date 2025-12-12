@@ -87,11 +87,38 @@
             </div>
         </div>
 
-        <div id="quest-log" class="window">
+<div id="quest-log" class="window">
             <div class="window-header" style="background: var(--aya-pink); color: black;">
-                <span>📜 quest_log.exe</span><div>x</div>
+                <span>📜 adventure_log.dat</span>
+                <div>x</div>
             </div>
-            <div class="window-body" style="background: #0a0a0a;">
+
+            <div class="tab-header">
+                <button class="tab-btn active" onclick="openTab('main_quest')">MAIN QUEST</button>
+                <button class="tab-btn" onclick="openTab('side_quest')">SIDE QUEST</button>
+            </div>
+
+            <div id="tab-main_quest" class="tab-content active" style="background: #0a0a0a;">
+                <p style="border-bottom: 1px dashed var(--aya-pink); padding-bottom: 5px; margin-bottom: 10px;">
+                    > LOADING_EDUCATION_HISTORY...
+                </p>
+                <ul class="quest-list">
+                    <li>
+                        <span class="quest-date">[2023-NOW]</span> 
+                        <strong style="color: var(--acid-green);">BACHELOR DEGREE</strong><br>
+                        @ Pamulang University <br>
+                        <small>>> Major in Informatics Engineering (ON PROGRESS). Current GPA 3.61/4.00</small>
+                    </li>
+                    <li>
+                        <span class="quest-date">[2020-2023]</span> 
+                        <strong style="color: var(--acid-green);">VOCATIONAL HIGH SCHOOL DIPLOMA</strong> <br>
+                        @ SMK Yuppentek 2 Tangerang<br>
+                        <small>>> Major in Software Engineering. Graduated with GPA 3.75/4.00.</small>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="tab-side_quest" class="tab-content" style="background: #0a0a0a;">
                 <p style="border-bottom: 1px dashed var(--aya-pink); padding-bottom: 5px; margin-bottom: 10px;">
                     > LOADING_CAREER_HISTORY...
                 </p>
@@ -245,20 +272,11 @@
                                 <span style="font-weight:bold;">[CODE]</span>
                             </div>
                         </a>
-
-                        <a href="LINK_GITHUB_PROJECT_2" target="_blank" style="text-decoration: none;">
-                            <div class="project-card" style="border-color: #00ffff; color: #00ffff;">
-                                <div>
-                                    <strong style="color: inherit;">💻 SIMPLE_CALCULATOR</strong>
-                                    <div style="font-size: 0.8rem; opacity: 0.8;">Python / C++ Learning</div>
-                                </div>
-                                <span style="font-weight:bold;">[CODE]</span>
-                            </div>
-                        </a>
                         </div>
                 </div>
             </div>
             </div>
+
         <div id="contact" class="window">
             <div class="window-header"><span>📧 send_mail.exe</span><div>x</div></div>
             <div class="window-body">
