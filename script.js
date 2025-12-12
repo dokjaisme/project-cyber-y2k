@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "> BYPASSING_SECURITY...",
         "> CONNECTING_TO_SERVER...",
         "> SYSTEM_READY...",
-        "> WAITING_FOR_USER_INPUT_ " 
+        ">> WAITING_FOR_USER_INPUT_ " 
     ];
 
     let logIndex = 0;
@@ -95,9 +95,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 8. NAVBAR LOGIC ---
+    const menuSysBtn = document.getElementById('menuSysBtn');
+    const menuDropdown = document.getElementById('menuDropdown');
+
+    // Logic untuk Menu Dropdown
+    if (menuSysBtn && menuDropdown) {
+        menuSysBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Mencegah klik menyebar ke listener document
+            menuDropdown.classList.toggle('show');
+        });
+
+        // Menutup dropdown jika user klik di luar area menu
+        document.addEventListener('click', function(e) {
+            if (menuDropdown && !menuSysBtn.contains(e.target) && !menuDropdown.contains(e.target)) {
+                menuDropdown.classList.remove('show');
+            }
+        });
+    }
+
+    // Fungsi tambahan untuk custom alert di dalam dropdown (harus di-global-kan)
+    function showCustomAlert(msg) {
+        const alertOverlay = document.getElementById('custom-alert-overlay');
+        const alertMsg = document.getElementById('custom-alert-msg');
+        if(alertMsg) {
+            // Mengganti \n dengan <br> agar text di popup bisa multi-line
+            alertMsg.innerHTML = msg.replace(/\\n/g, '<br>');
+        }
+        if(alertOverlay) {
+            alertOverlay.style.display = "flex";
+        }
+    }
+    window.showCustomAlert = showCustomAlert;
 });
 
-// Fungsi Tutup Custom Alert (Dipanggil tombol X dan OK)
+// Fungsi Tutup Custom Alert (Dipanggil tombol X dan OK) - Global
 function closeCustomAlert() {
     const alertOverlay = document.getElementById('custom-alert-overlay');
     if(alertOverlay) {
@@ -106,7 +138,7 @@ function closeCustomAlert() {
 }
 
 
-// --- 4. TAB SWITCHER ---
+// --- 4. TAB SWITCHER - Global ---
 function openTab(tabName) {
     const contents = document.querySelectorAll('.tab-content');
     contents.forEach(content => content.classList.remove('active'));
@@ -126,13 +158,13 @@ function openTab(tabName) {
 }
 
 
-// --- 5. MEDIA CONTROL ---
+// --- 5. MEDIA CONTROL - Global (Dibiarkan untuk konsistensi) ---
 function toggleVideo() {
     alert("ACCESS DENIED: Please use the YouTube player controls directly.");
 }
 
 
-// --- 6. JAM DIGITAL ---
+// --- 6. JAM DIGITAL - Global ---
 function updateTime() {
     const now = new Date();
     const timeString = String(now.getHours()).padStart(2, '0') + ":" + String(now.getMinutes()).padStart(2, '0') + ":" + String(now.getSeconds()).padStart(2, '0');
@@ -141,7 +173,7 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 
-// --- 7. CERTIFICATE VIEWER LOGIC ---
+// --- 7. CERTIFICATE VIEWER LOGIC - Global ---
 function openCert(title, imgSrc) {
     const overlay = document.getElementById('cert-overlay');
     const titleEl = document.getElementById('cert-title');
@@ -166,4 +198,19 @@ function openCert(title, imgSrc) {
 function closeCert() {
     const overlay = document.getElementById('cert-overlay');
     if (overlay) overlay.style.display = "none";
+}
+
+// --- FUNGSI SCROLL TO SECTION (FINAL FIX) - Global ---
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        // Scroll ke bagian window/section yang dituju
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Memberikan efek glow sebentar pada window yang dituju (menggunakan CSS nav-target-glow)
+        section.classList.add('nav-target-glow');
+        setTimeout(() => {
+            section.classList.remove('nav-target-glow');
+        }, 1000); 
+    }
 }

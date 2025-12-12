@@ -57,7 +57,6 @@
             <div class="window-header"><span>stats_monitor.exe</span><div>x</div></div>
             <div class="window-body" style="background: #000;">
                 <div class="arcade-stats-container">                    
-                    <div class="screen-border">
                       <div class="stat-row">
                         <div class="stat-info"><span class="heart">♥</span> Hardware & Net <span class="value">Lvl 90</span></div>
                         <div class="progress-bar"><div class="fill" style="width: 90%;"></div></div>
@@ -84,12 +83,11 @@
                       READY TO GRIND? <span class="blink">PRESS START</span>
                     </div>
                   </div>
-            </div>
-        </div>
+                </div>
 
 <div id="quest-log" class="window">
-            <div class="window-header" style="background: var(--aya-pink); color: black;">
-                <span>📜 adventure_log.dat</span>
+            <div class="window-header" style="background: var(--acid-green); color: black;">
+                <span>adventure_log.dat</span>
                 <div>x</div>
             </div>
 
@@ -152,9 +150,9 @@
         </div>
         
         <div id="achievements" class="window">
-            <div class="window-header" style="background: black; color: var(--acid-green); border-bottom: 2px solid var(--acid-green);">
-                <span>🏆 achievements.log</span>
-                <div style="border:1px solid var(--acid-green); padding:0 5px;">x</div>
+            <div class="window-header" style="background: var(--aya-pink); color: black; border-bottom: 2px solid var(--aya-pink);">
+                <span>achievements.log</span>
+                <div style="border:1px solid var(--aya-pink); padding:0 5px;">x</div>
             </div>
             <div class="window-body" style="background: #111;">
                 <p style="margin-bottom: 10px; border-bottom: 1px dashed var(--acid-green); padding-bottom: 5px;">
@@ -191,7 +189,7 @@
 
         <div id="portfolio" class="window">
             <div class="window-header">
-                <span>🎥 multimedia_center.exe</span>
+                <span>multimedia_center.exe</span>
                 <div>x</div>
             </div>
             
@@ -263,8 +261,8 @@
                     </p>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         
-                        <a href="LINK_GITHUB_PROJECT_1" target="_blank" style="text-decoration: none;">
-                            <div class="project-card" style="border-color: #00ffff; color: #00ffff;">
+                        <a href="https://github.com/dokjaisme/project-cyber-y2k" target="_blank" style="text-decoration: none;">
+                            <div class="project-card">
                                 <div>
                                     <strong style="color: inherit;">👾 DOKJAISME_OS_WEB</strong>
                                     <div style="font-size: 0.8rem; opacity: 0.8;">HTML5 / CSS3 / JS Project</div>
@@ -278,7 +276,7 @@
             </div>
 
         <div id="contact" class="window">
-            <div class="window-header"><span>📧 send_mail.exe</span><div>x</div></div>
+            <div class="window-header"><span>send_mail.exe</span><div>x</div></div>
             <div class="window-body">
                 <div class="spam-sticker" style="top: 10%; right: 5%; font-size: 3rem; transform: rotate(15deg);">SPAM?</div>
                 <div class="spam-sticker" style="bottom: 30%; left: 5%; font-size: 2rem; transform: rotate(-10deg);">REPLY_ASAP</div>
@@ -300,20 +298,34 @@
             </div>
         </div>
 
-    <nav>
-        <button class="start-btn">
-            <span style="background: var(--aya-pink); width: 10px; height: 10px; display:inline-block; border-radius: 50%;"></span>
-            MENU_SYS
+<nav>
+    <div class="menu-sys-container">
+        <button class="logo-btn" id="menuSysBtn">
+            <i class="fas fa-microchip"></i> DOKJAISME_OS
         </button>
-        <div class="taskbar-controls">
-            <button class="control-btn" onclick="alert('Rewind function unavailable')"><i class="fas fa-step-backward"></i></button>
-            <button class="control-btn" onclick="toggleVideo()"><i class="fas fa-play"></i></button>
-            <button class="control-btn" onclick="alert('Skip function unavailable')"><i class="fas fa-step-forward"></i></button>
+        <div id="menuDropdown" class="menu-dropdown">
+            <button onclick="window.location.reload();">RESTART_SYSTEM</button>
+            <button onclick="showCustomAlert('SHUTDOWN_INITIATED\\n\\nAccess_denied: Please close browser manually')" class="error-option">SHUTDOWN_TERMINAL</button>
         </div>
-        <div id="clock-widget">00:00:00</div>
-    </nav>
+    </div>
 
-    <div class="decor-container">
+    <div class="search-bar-container">
+        <input type="text" id="systemSearch" placeholder="> SEARCH_DIRECTORY..." class="terminal-input">
+        <i class="fas fa-search search-icon"></i>
+    </div>
+
+    <div class="window-switcher">
+        <button class="window-btn" onclick="scrollToSection('about')" title="[1] BIO_DATA.TXT"><i class="fas fa-address-card"></i></button>
+        <button class="window-btn" onclick="scrollToSection('skills')" title="[2] STATS_MONITOR.EXE"><i class="fas fa-heartbeat"></i></button>
+        <button class="window-btn" onclick="scrollToSection('quest-log')" title="[3] ADVENTURE_LOG.DAT"><i class="fas fa-scroll"></i></button>
+        <button class="window-btn" onclick="scrollToSection('achievements')" title="[4] ACHIEVEMENTS.LOG"><i class="fas fa-trophy"></i></button>
+        <button class="window-btn" onclick="scrollToSection('portfolio')" title="[5] MULTIMEDIA_CENTER.EXE"><i class="fas fa-folder-open"></i></button>
+        <button class="window-btn" onclick="scrollToSection('contact')" title="[6] SEND_MAIL.EXE"><i class="fas fa-envelope"></i></button>
+    </div>
+    
+    <div id="clock-widget">00:00:00</div>
+</nav>
+<div class="decor-container">
         <div class="side-marquee left">
             <div class="track">/// SYSTEM_OVERLOAD /// CRITICAL_ERROR /// AESTHETIC_DETECTED /// </div>
             <div class="track">/// SYSTEM_OVERLOAD /// CRITICAL_ERROR /// AESTHETIC_DETECTED /// </div>
