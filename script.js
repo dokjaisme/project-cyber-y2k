@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. bagian booting
+  // bagian booting
   const bootLogs = [
     "> INITIALIZING_KERNEL...",
     "> LOADING_DRIVERS: [OK]",
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (logContainer) typeBootLog();
   updateTime();
 
-  // --- 3. CUSTOM POPUP CONTACT FORM (UPDATED!) ---
+  // custom alert di form
   const contactForm = document.getElementById("contactForm");
   const alertOverlay = document.getElementById("custom-alert-overlay");
   const alertMsg = document.getElementById("custom-alert-msg");
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const senderInput = contactForm.querySelector("input");
       const senderName = senderInput ? senderInput.value : "User";
 
-      // Set pesan di Custom Alert
+      // set pesan di alert
       if (alertMsg) {
         alertMsg.innerText = `DATA PACKET SENT!\n\nTo: DOKJAISME\nFrom: ${senderName}\nStatus: 200 OK (DELIVERED)`;
       }
@@ -94,18 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 8. NAVBAR LOGIC ---
+  // navbar logic
   const menuSysBtn = document.getElementById("menuSysBtn");
   const menuDropdown = document.getElementById("menuDropdown");
 
-  // Logic untuk Menu Dropdown
+  // dropdown logic
   if (menuSysBtn && menuDropdown) {
     menuSysBtn.addEventListener("click", function (e) {
-      e.stopPropagation(); // Mencegah klik menyebar ke listener document
+      e.stopPropagation();
       menuDropdown.classList.toggle("show");
     });
 
-    // Menutup dropdown jika user klik di luar area menu
+    //dropdown tutup kalau klik di luar
     document.addEventListener("click", function (e) {
       if (
         menuDropdown &&
@@ -117,12 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Fungsi tambahan untuk custom alert di dalam dropdown (harus di-global-kan)
+  // Fungsi Custom Alert (Global)
   function showCustomAlert(msg) {
     const alertOverlay = document.getElementById("custom-alert-overlay");
     const alertMsg = document.getElementById("custom-alert-msg");
     if (alertMsg) {
-      // Mengganti \n dengan <br> agar text di popup bisa multi-line
+      // Ganti newline (\n) jadi <br> biar bisa tampil di HTML
       alertMsg.innerHTML = msg.replace(/\\n/g, "<br>");
     }
     if (alertOverlay) {
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.showCustomAlert = showCustomAlert;
 });
 
-// Fungsi Tutup Custom Alert (Dipanggil tombol X dan OK) - Global
+//custom alert (global)
 function closeCustomAlert() {
   const alertOverlay = document.getElementById("custom-alert-overlay");
   if (alertOverlay) {
@@ -140,7 +140,7 @@ function closeCustomAlert() {
   }
 }
 
-// --- 4. TAB SWITCHER - Global ---
+// ganti tab (global)
 function openTab(tabName) {
   const contents = document.querySelectorAll(".tab-content");
   contents.forEach((content) => content.classList.remove("active"));
@@ -159,12 +159,12 @@ function openTab(tabName) {
   });
 }
 
-// --- 5. MEDIA CONTROL - Global (Dibiarkan untuk konsistensi) ---
+// youtube player control override (global)
 function toggleVideo() {
   alert("ACCESS DENIED: Please use the YouTube player controls directly.");
 }
 
-// --- 6. JAM DIGITAL - Global ---
+// jam digital (global)
 function updateTime() {
   const now = new Date();
   const timeString =
@@ -178,25 +178,24 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 
-// --- 7. CERTIFICATE VIEWER LOGIC - Global ---
+//buat buka sertifikat (global)
 function openCert(title, imgSrc) {
   const overlay = document.getElementById("cert-overlay");
   const titleEl = document.getElementById("cert-title");
   const imgEl = document.getElementById("cert-img");
 
   if (overlay && titleEl && imgEl) {
-    // Ganti judul jendela
+    // Ganti judul sesuai sertifikat
     titleEl.innerText = "EVIDENCE: " + title;
 
-    // Ganti gambarnya
-    // Kalau gambarnya belum ada/error, dia bakal pake placeholder hitam
+    // buat ganti gambar sesuai sertifikat, kalo kosong atau error ganti ke placeholder
     imgEl.src = imgSrc;
     imgEl.onerror = function () {
       this.src =
         "https://via.placeholder.com/600x400/000000/ff00ff?text=IMAGE+NOT+FOUND";
     };
 
-    // Munculin Overlay
+    // overlay
     overlay.style.display = "flex";
   }
 }
@@ -206,14 +205,13 @@ function closeCert() {
   if (overlay) overlay.style.display = "none";
 }
 
-// --- FUNGSI SCROLL TO SECTION (FINAL FIX) - Global ---
+// scroll ke section tertentu (global)
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
     // Scroll ke bagian window/section yang dituju
     section.scrollIntoView({ behavior: "smooth", block: "start" });
 
-    // Memberikan efek glow sebentar pada window yang dituju (menggunakan CSS nav-target-glow)
     section.classList.add("nav-target-glow");
     setTimeout(() => {
       section.classList.remove("nav-target-glow");
