@@ -22,7 +22,7 @@
 * **Assets:** FontAwesome, Google Fonts (Press Start 2P, VT323)
 
 ## 🚀 HOW_TO_RUN
-1.  Clone this repository: `git clone https://github.com/username/project-cyber-y2k.git`
+1.  Clone this repository: `git clone https://github.com/dokjaisme/project-cyber-y2k.git`
 2.  Navigate to directory: `cd project-cyber-y2k`
 3.  Open `index.html` in your favorite browser.
 4.  **Enjoy the experience!**
@@ -33,3 +33,4 @@
   <p><em>© 2025 Dokjaisme Systems. All rights reserved.</em></p>
 
 </div>
+
