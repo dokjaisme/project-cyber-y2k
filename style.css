@@ -5,7 +5,7 @@
   --win-bg: #000000;
 }
 
-/* --- 1. GLOBAL & FONT UPGRADE --- */
+/* buat layout utama */
 body {
   background-color: var(--bg-color);
   background-image: linear-gradient(#1a1a1a 1px, transparent 1px),
@@ -72,7 +72,7 @@ nav,
   font-size: 1.5rem;
 }
 
-/* --- 3. WINDOWS --- */
+/* buat window global */
 .window {
   background: var(--win-bg);
   border: 3px solid var(--acid-green);
@@ -130,7 +130,7 @@ nav,
   background: var(--aya-pink);
 }
 
-/* --- 4. PROFILE & SKILLS --- */
+/* bagian profile */
 .profile-layout {
   display: flex;
   gap: 30px;
@@ -182,7 +182,7 @@ nav,
   animation: blink 1s infinite step-end;
 }
 
-/* --- 5. CONTACT FORM --- */
+/* bagian contact form */
 #contact .window-body {
   background: repeating-linear-gradient(
     45deg,
@@ -266,8 +266,7 @@ textarea:focus {
   color: var(--acid-green);
 }
 
-/* --- 6. TASKBAR & TABS --- */
-/* GANTI STYLE NAV LAMA */
+/* bagian taskbar */
 nav {
   position: fixed;
   bottom: 0;
@@ -283,7 +282,7 @@ nav {
   box-sizing: border-box;
 }
 
-/* 1. Logo/Menu System */
+/* bagian menu dan logo */
 .menu-sys-container {
   position: relative;
   display: inline-block;
@@ -351,7 +350,7 @@ nav {
   color: var(--aya-pink);
 }
 
-/* 2. Search Bar */
+/* search bar */
 .search-bar-container {
   flex: 1;
   position: relative;
@@ -384,7 +383,7 @@ nav {
   font-size: 0.9rem;
 }
 
-/* 3. Window Switcher */
+/* buat window switcher */
 .window-switcher {
   display: flex;
   gap: 5px;
@@ -410,6 +409,7 @@ nav {
   transform: translateY(1px);
 }
 
+/* jam */
 #clock-widget {
   margin-left: auto;
   font-weight: bold;
@@ -421,6 +421,7 @@ nav {
   font-size: 1.5rem;
 }
 
+/* buat tab system */
 .tab-header {
   display: flex;
   background: #111;
@@ -453,6 +454,7 @@ nav {
   display: block;
 }
 
+/* buat project card */
 .project-card {
   background: #111;
   border: 1px solid var(--aya-pink);
@@ -469,7 +471,7 @@ nav {
   cursor: pointer;
 }
 
-/* --- 7. DECORATION & ANIMATION --- */
+/* buat dekorasi n animasi */
 .side-marquee {
   position: fixed;
   top: 0;
@@ -638,7 +640,7 @@ body::after {
   }
 }
 
-/* ARCADE STATS (FINAL) */
+/* buat stats window */
 .arcade-stats-container {
   background-color: #0c0c14;
   border: 4px solid #5d275d;
@@ -724,7 +726,7 @@ body::after {
   }
 }
 
-/* STICKER DECORATION */
+/* buat sticker spam */
 .spam-sticker {
   position: absolute;
   color: rgba(204, 255, 0, 0.2);
@@ -736,9 +738,9 @@ body::after {
   filter: blur(1px);
 }
 
-/* === CUSTOM ALERT MODAL STYLES (NEW!) === */
+/* buat custom alert */
 #custom-alert-overlay {
-  display: none; /* Default ngumpet */
+  display: none; /* default ngumpet */
   position: fixed;
   top: 0;
   left: 0;
@@ -762,13 +764,9 @@ body::after {
   color: black;
 }
 
-/* ============================
-   CERTIFICATE VIEWER & GLOW
-   ============================ */
-
-/* 1. Tombol [UNLOCKED] biar bisa di-klik & glowing */
+/* Tombol [UNLOCKED] biar bisa di-klik & glowing */
 .unlock-badge {
-  color: var(--aya-pink); /* Warna asli Pink */
+  color: var(--aya-pink);
   cursor: pointer;
   font-weight: bold;
   margin-right: 5px;
@@ -776,40 +774,39 @@ body::after {
   display: inline-block;
 }
 
-/* Efek Hover NEON */
+/* buat efek hover tombol unlock */
 .unlock-badge:hover {
-  color: #fff; /* Teks jadi putih pas disorot */
+  color: #fff;
   text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff,
-    0 0 40px #ff00ff; /* Glow Pink Kuat */
-  transform: scale(1.1); /* Agak mumbul dikit */
+    0 0 40px #ff00ff;
+  transform: scale(1.1); /* biar agak mumbul dikit */
 }
 
-/* 2. Overlay Gelap buat Sertifikat */
+/* Overlay Gelap buat Sertifikat */
 #cert-overlay {
-  display: none; /* Default ngumpet */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9); /* Latar item transparan dikit */
+  background: rgba(0, 0, 0, 0.9);
   z-index: 9999999; /* Paling atas di atas segalanya */
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(5px); /* Efek blur background di belakangnya */
+  backdrop-filter: blur(5px);
 }
 
-/* 3. Jendela Sertifikatnya */
+/* Jendela Sertifikatnya */
 .cert-window {
   width: 90%;
   max-width: 800px; /* Maksimal segini biar ga kegedean */
   background: black;
   border: 2px solid var(--aya-pink);
-  box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); /* Shadow pink luas */
-  animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi muncul mental */
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+  animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Animasi Mental */
 @keyframes popUp {
   from {
     transform: scale(0.5);
@@ -821,7 +818,7 @@ body::after {
   }
 }
 
-/* --- 8. SCROLL TARGET EFFECT --- */
+/* style untuk efek glowing pada window yang ditarget */
 .nav-target-glow {
   animation: targetGlow 0.5s 2; /* 2x kedip */
 }
@@ -841,7 +838,7 @@ body::after {
   }
 }
 
-/* Gaya khusus untuk window yang pakai shadow pink (#portfolio, #contact, #quest-log) */
+/* style khusus untuk window yang pakai shadow pink (#portfolio, #contact, #quest-log) */
 #portfolio.nav-target-glow,
 #contact.nav-target-glow,
 #quest-log.nav-target-glow {
@@ -863,12 +860,10 @@ body::after {
   }
 }
 
-/* Tambahkan atau pastikan ini ada di bagian bawah file style.css Anda */
-
-/* --- NEW: TABLE STYLES FOR QUEST LOG --- */
+/* tambah ini buat table (lupa) */
 .retro-table {
   width: 100%;
-  border-collapse: collapse; /* Hilangkan batas ganda */
+  border-collapse: collapse;
   font-family: "VT323", monospace;
   font-size: 1rem;
   color: var(--acid-green);
@@ -878,23 +873,20 @@ body::after {
 .retro-table th,
 .retro-table td {
   padding: 8px 10px;
-  /* Border dashed pink seperti divider */
   border: 1px dashed var(--aya-pink);
   text-align: left;
   text-transform: uppercase;
 }
 
 .retro-table th {
-  /* Header dibikin warna kebalikan biar menonjol */
   background: var(--acid-green);
   color: black;
-  font-family: "Press Start 2P", cursive; /* Font Header beda */
+  font-family: "Press Start 2P", cursive;
   font-size: 0.7rem;
-  /* Garis bawah lebih tebal */
   border-bottom: 3px solid var(--aya-pink);
 }
 
 .retro-table tbody tr:hover {
-  background: #002200; /* Background hijau gelap saat kursor lewat */
-  color: white; /* Font jadi putih */
+  background: #002200;
+  color: white;
 }
