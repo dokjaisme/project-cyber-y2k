@@ -1,387 +1,774 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dokjaisme_OS.exe</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
 
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <div id="boot-screen">
-        <div style="text-align: left; width: 100%; max-width: 600px;">
-            <p>>> BIOS DATE 05/12/25 12:00:00 VER 2.0.77</p>
-            <p>>> CPU: AMD RYZEN 5 @ 4.2GHz</p>
-            <p>>> MEMORY TEST: 16384K OK</p>
-            <p>>> DETECTING USER: @DOKJAISME</p>
-            <hr style="border: 1px dashed var(--acid-green); margin: 20px 0;">
-            <div id="boot-log-container"></div>
-        </div>
+      <div style="text-align: left; width: 100%; max-width: 600px">
+        <p>>> BIOS DATE 05/12/25 12:00:00 VER 2.0.77</p>
+        <p>>> CPU: AMD RYZEN 5 @ 4.2GHz</p>
+        <p>>> MEMORY TEST: 16384K OK</p>
+        <p>>> DETECTING USER: @DOKJAISME</p>
+        <hr style="border: 1px dashed var(--acid-green); margin: 20px 0" />
+        <div id="boot-log-container"></div>
+      </div>
     </div>
 
     <div class="desktop-container">
-        
-        <div style="background: var(--acid-green); color: black; padding: 5px; font-weight: bold; margin-bottom: 30px; border: 2px solid black; font-family: 'VT323', monospace; font-size: 1.2rem;">
-            <marquee scrollamount="12">/// HAVE YOU TRIED RESTARTING IT? /// YES, I CAN FIX YOUR PRINTER /// NO, I WON'T HACK YOUR EX'S FACEBOOK /// I ACCEPT COFFEE FOR PAYMENT ///</marquee>
+      <div
+        style="
+          background: var(--acid-green);
+          color: black;
+          padding: 5px;
+          font-weight: bold;
+          margin-bottom: 30px;
+          border: 2px solid black;
+          font-family: 'VT323', monospace;
+          font-size: 1.2rem;
+        "
+      >
+        <marquee scrollamount="12"
+          >/// HAVE YOU TRIED RESTARTING IT? /// YES, I CAN FIX YOUR PRINTER ///
+          NO, I WON'T HACK YOUR EX'S FACEBOOK /// I ACCEPT COFFEE FOR PAYMENT
+          ///</marquee
+        >
+      </div>
+
+      <header style="text-align: center; margin-bottom: 40px">
+        <h1 class="glitch-text">USER@DOKJAISME</h1>
+        <p
+          id="status-badge"
+          style="
+            background: #333;
+            color: #fff;
+            display: inline-block;
+            padding: 5px 15px;
+            font-weight: bold;
+            border: 2px solid black;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+          "
+        >
+          STATUS: ONLINE
+        </p>
+      </header>
+      <!--requirement div dan gambar-->
+      <div id="about" class="window">
+        <div class="window-header">
+          <span>bio_data.txt</span>
+          <div>x</div>
+        </div>
+        <div class="window-body profile-layout">
+          <img
+            src="./assets/images/foto_profile.jpg"
+            alt="Me"
+            class="profile-pic"
+          />
+          <div>
+            <h2>ENJELIKA DINDA RAHMAWATI</h2>
+            <p><strong>Class:</strong> The "IT Guy" (But cooler)</p>
+            <p><strong>Base :</strong> South Tangerang Server [ID]</p>
+            <p>
+              <strong>Lore :</strong> I turn things off and on again for a
+              living. If it has a screen, I can probably fix it. If it smokes,
+              run.
+            </p>
+            <p
+              class="pixel-font"
+              style="
+                margin-top: 15px;
+                color: var(--aya-pink);
+                font-size: 0.8rem;
+              "
+            >
+              <i>"It works on my machine tho ¯\_(ツ)_/¯"</i><br />
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="skills" class="window">
+        <div class="window-header">
+          <span>stats_monitor.exe</span>
+          <div>x</div>
+        </div>
+        <div class="window-body" style="background: #000">
+          <div class="arcade-stats-container">
+            <div class="stat-row">
+              <div class="stat-info">
+                <span class="heart">♥</span> Hardware & Net
+                <span class="value">Lvl 90</span>
+              </div>
+              <div class="progress-bar">
+                <div class="fill" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-info">
+                <span class="heart">♥</span> Web Design
+                <span class="value">Lvl 85</span>
+              </div>
+              <div class="progress-bar">
+                <div class="fill" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-info">
+                <span class="heart">♥</span> Translation
+                <span class="value">Lvl 95</span>
+              </div>
+              <div class="progress-bar">
+                <div class="fill" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-info">
+                <span class="heart">♥</span> Manual Labour
+                <span class="value">Lvl 70</span>
+              </div>
+              <div class="progress-bar">
+                <div class="fill" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="stat-row special">
+              <div class="stat-info">
+                <span class="heart">♥</span> Caffeine
+                <span class="value">MAX</span>
+              </div>
+              <div class="progress-bar">
+                <div class="fill blink" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arcade-footer">
+            READY TO GRIND? <span class="blink">PRESS START</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="quest-log" class="window">
+        <div
+          class="window-header"
+          style="background: var(--aya-pink); color: black"
+        >
+          <span>📜 adventure_log.dat</span>
+          <div>x</div>
         </div>
 
-        <header style="text-align: center; margin-bottom: 40px;">
-            <h1 class="glitch-text">USER@DOKJAISME</h1>
-            <p id="status-badge" style="background: #333; color: #fff; display: inline-block; padding: 5px 15px; font-weight: bold; border: 2px solid black; font-family: 'VT323', monospace; font-size: 1.2rem;">
-                STATUS: ONLINE
-            </p>
-        </header>
-        
-        <div id="about" class="window">
-            <div class="window-header"><span>bio_data.txt</span><div>x</div></div>
-            <div class="window-body profile-layout">
-                <img src="./assets/images/foto_profile.jpg" alt="Me" class="profile-pic">
-                <div>
-                    <h2>ENJELIKA DINDA RAHMAWATI</h2>
-                    <p><strong>Class:</strong> The "IT Guy" (But cooler)</p>
-                    <p><strong>Base :</strong> South Tangerang Server [ID]</p>
-                    <p><strong>Lore :</strong> I turn things off and on again for a living. If it has a screen, I can probably fix it. If it smokes, run.</p>
-                    <p class="pixel-font" style="margin-top:15px; color: var(--aya-pink); font-size: 0.8rem;">
-                        <i>"It works on my machine tho ¯\_(ツ)_/¯"</i><br>
-                    </p>
-                </div>
-            </div>
+        <div class="tab-header">
+          <button class="tab-btn active" onclick="openTab('main_quest')">
+            MAIN QUEST
+          </button>
+          <button class="tab-btn" onclick="openTab('side_quest')">
+            SIDE QUEST
+          </button>
         </div>
-        
-        <div id="skills" class="window">
-            <div class="window-header"><span>stats_monitor.exe</span><div>x</div></div>
-            <div class="window-body" style="background: #000;">
-                <div class="arcade-stats-container">                    
-                      <div class="stat-row">
-                        <div class="stat-info"><span class="heart">♥</span> Hardware & Net <span class="value">Lvl 90</span></div>
-                        <div class="progress-bar"><div class="fill" style="width: 90%;"></div></div>
-                      </div>
-                      <div class="stat-row">
-                        <div class="stat-info"><span class="heart">♥</span> Web Design <span class="value">Lvl 85</span></div>
-                        <div class="progress-bar"><div class="fill" style="width: 85%;"></div></div>
-                      </div>
-                      <div class="stat-row">
-                        <div class="stat-info"><span class="heart">♥</span> Translation <span class="value">Lvl 95</span></div>
-                        <div class="progress-bar"><div class="fill" style="width: 95%;"></div></div>
-                      </div>
-                       <div class="stat-row">
-                        <div class="stat-info"><span class="heart">♥</span> Manual Labour <span class="value">Lvl 70</span></div>
-                        <div class="progress-bar"><div class="fill" style="width: 70%;"></div></div>
-                      </div>
-                      <div class="stat-row special">
-                        <div class="stat-info"><span class="heart">♥</span> Caffeine <span class="value">MAX</span></div>
-                        <div class="progress-bar"><div class="fill blink" style="width: 100%;"></div></div>
-                      </div>
-                    </div>
-                    
-                    <div class="arcade-footer">
-                      READY TO GRIND? <span class="blink">PRESS START</span>
+
+        <div
+          id="tab-main_quest"
+          class="tab-content active"
+          style="background: #0a0a0a"
+        >
+          <p
+            style="
+              border-bottom: 1px dashed var(--aya-pink);
+              padding-bottom: 5px;
+              margin-bottom: 10px;
+            "
+          >
+            > LOADING_EDUCATION_HISTORY...
+          </p>
+          <ul class="quest-list">
+            <li>
+              <span class="quest-date">[2023-NOW]</span>
+              <strong style="color: var(--acid-green)">BACHELOR DEGREE</strong
+              ><br />
+              @ Pamulang University <br />
+              <small
+                >>> Major in Informatics Engineering (ON PROGRESS). Current GPA
+                3.61/4.00</small
+              >
+            </li>
+            <li>
+              <span class="quest-date">[2020-2023]</span>
+              <strong style="color: var(--acid-green)"
+                >VOCATIONAL HIGH SCHOOL DIPLOMA</strong
+              >
+              <br />
+              @ SMK Yuppentek 2 Tangerang<br />
+              <small
+                >>> Major in Software Engineering. Graduated with GPA
+                3.75/4.00.</small
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          id="tab-side_quest"
+          class="tab-content"
+          style="background: #0a0a0a"
+        >
+          <p
+            style="
+              border-bottom: 1px dashed var(--aya-pink);
+              padding-bottom: 5px;
+              margin-bottom: 10px;
+            "
+          >
+            > LOADING_CAREER_HISTORY... **(TABLE DATA INITIATED)**
+          </p>
+        <!--requirement table-->
+          <table class="retro-table">
+            <thead>
+              <tr>
+                <th>[YEAR]</th>
+                <th>[POSITION]</th>
+                <th>[COMPANY]</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-NOW</td>
+                <td>ADMINISTRATIVE STAFF</td>
+                <td>PT Netcom Solusi Persada</td>
+              </tr>
+              <tr>
+                <td>2024-2025</td>
+                <td>IT SUPPORT & TECHNICIAN</td>
+                <td>PT Netcom Solusi Persada</td>
+              </tr>
+              <tr>
+                <td>2024</td>
+                <td>PRODUCTION OPERATOR</td>
+                <td>PT Torabika Eka Semesta</td>
+              </tr>
+              <tr>
+                <td>2021-2023</td>
+                <td>TRUCK DRIVER ASSISTANT</td>
+                <td>Logistics (Part-time)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="achievements" class="window">
+        <div
+          class="window-header"
+          style="
+            background: var(--aya-pink);
+            color: black;
+            border-bottom: 2px solid var(--aya-pink);
+          "
+        >
+          <span>achievements.log</span>
+          <div style="border: 1px solid var(--aya-pink); padding: 0 5px">x</div>
+        </div>
+        <div class="window-body" style="background: #111">
+          <p
+            style="
+              margin-bottom: 10px;
+              border-bottom: 1px dashed var(--acid-green);
+              padding-bottom: 5px;
+            "
+          >
+            > LISTING_COMPLETED_QUESTS (CLICK_TO_VIEW_PROOF):
+          </p>
+          <ul style="list-style: none; padding: 0; font-size: 0.9rem">
+            <li style="margin-bottom: 10px">
+              <span
+                class="unlock-badge"
+                onclick="openCert('ETHICAL_HACKING', './assets/images/sertifikat1.jpg')"
+                >[UNLOCKED]</span
+              >
+              Ethical Hacking Cert.
+            </li>
+            <li style="margin-bottom: 10px">
+              <span
+                class="unlock-badge"
+                onclick="openCert('DATA_SCIENCE', './assets/images/sertifikat2.jpg')"
+                >[UNLOCKED]</span
+              >
+              Data Science (R Fundamental)
+            </li>
+            <li style="margin-bottom: 10px">
+              <span
+                class="unlock-badge"
+                onclick="openCert('C++_HTML_BASIC', './assets/images/sertifikat3.jpg')"
+                >[UNLOCKED]</span
+              >
+              Sololearn C++
+            </li>
+            <li style="margin-bottom: 10px">
+              <span
+                class="unlock-badge"
+                onclick="openCert('C++_HTML_BASIC', './assets/images/sertifikat4.jpg')"
+                >[UNLOCKED]</span
+              >
+              Sololearn HTML
+            </li>
+            <li style="margin-bottom: 10px">
+              <span
+                class="unlock-badge"
+                onclick="openCert('AI_WORKSHOP', './assets/images/sertifikat5.jpg')"
+                >[UNLOCKED]</span
+              >
+              Workshop Industri 5.0 & AI
+            </li>
+            <li style="margin-bottom: 10px">
+              <span
+                class="unlock-badge"
+                onclick="openCert('UJI_KOMPETENSI', './assets/images/sertifikat6.jpg')"
+                >[UNLOCKED]</span
+              >
+              Uji Kompetensi RPL
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="portfolio" class="window">
+        <div class="window-header">
+          <span>multimedia_center.exe</span>
+          <div>x</div>
+        </div>
+
+        <div class="tab-header">
+          <button class="tab-btn active" onclick="openTab('video')">
+            VIDEO
+          </button>
+          <button class="tab-btn" onclick="openTab('spotify')">MUSIC</button>
+          <button class="tab-btn" onclick="openTab('carrd')">PROJECTS</button>
+        </div>
+        <!--requirement video dengan iframe-->
+        <div id="tab-video" class="tab-content active">
+          <p>> Playing: Nirvana - Love Buzz</p>
+          <div
+            style="
+              border: 2px solid var(--aya-pink);
+              width: 100%;
+              aspect-ratio: 16/9;
+            "
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/ZEh3mO9MPV0"
+              title="YouTube video player"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <!--requirement spotify dengan iframe-->
+        <div id="tab-spotify" class="tab-content">
+          <p>> Streaming from Spotify API...</p>
+          <iframe
+            style="border-radius: 12px"
+            src="https://open.spotify.com/embed/playlist/2hvxjH2Xa8LWZ8lXIEXlQd?utm_source=generator"
+            width="100%"
+            height="152"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div id="tab-carrd" class="tab-content">
+          <p
+            style="
+              margin-bottom: 15px;
+              border-bottom: 1px dashed var(--acid-green);
+              padding-bottom: 5px;
+            "
+          >
+            > ACCESSING_PUBLIC_DIRECTORY...
+          </p>
+
+          <div style="margin-bottom: 25px">
+            <p
+              style="
+                font-size: 0.8rem;
+                color: #777;
+                margin-bottom: 10px;
+                font-family: 'VT323';
+              "
+            >
+              [DIR: /WEB_DESIGN/CARRD/]
+            </p>
+            <!--requirement hyperlink-->
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <a
+                href="https://anarkhism.carrd.co"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <div class="project-card">
+                  <div>
+                    <strong style="color: inherit"
+                      >🎨 COMMISSION.CARRD 1.0</strong
+                    >
+                    <div style="font-size: 0.8rem; opacity: 0.8">
+                      Personal use
                     </div>
                   </div>
+                  <span style="font-weight: bold">[VISIT]</span>
                 </div>
+              </a>
 
-<div id="quest-log" class="window">
-            <div class="window-header" style="background: var(--aya-pink); color: black;">
-                <span>📜 adventure_log.dat</span>
-                <div>x</div>
-            </div>
-
-            <div class="tab-header">
-                <button class="tab-btn active" onclick="openTab('main_quest')">MAIN QUEST</button>
-                <button class="tab-btn" onclick="openTab('side_quest')">SIDE QUEST</button>
-            </div>
-
-            <div id="tab-main_quest" class="tab-content active" style="background: #0a0a0a;">
-                <p style="border-bottom: 1px dashed var(--aya-pink); padding-bottom: 5px; margin-bottom: 10px;">
-                    > LOADING_EDUCATION_HISTORY...
-                </p>
-                <ul class="quest-list">
-                    <li>
-                        <span class="quest-date">[2023-NOW]</span> 
-                        <strong style="color: var(--acid-green);">BACHELOR DEGREE</strong><br>
-                        @ Pamulang University <br>
-                        <small>>> Major in Informatics Engineering (ON PROGRESS). Current GPA 3.61/4.00</small>
-                    </li>
-                    <li>
-                        <span class="quest-date">[2020-2023]</span> 
-                        <strong style="color: var(--acid-green);">VOCATIONAL HIGH SCHOOL DIPLOMA</strong> <br>
-                        @ SMK Yuppentek 2 Tangerang<br>
-                        <small>>> Major in Software Engineering. Graduated with GPA 3.75/4.00.</small>
-                    </li>
-                </ul>
-            </div>
-            
-            <div id="tab-side_quest" class="tab-content" style="background: #0a0a0a;">
-                <p style="border-bottom: 1px dashed var(--aya-pink); padding-bottom: 5px; margin-bottom: 10px;">
-                    > LOADING_CAREER_HISTORY... **(TABLE DATA INITIATED)**
-                </p>
-                
-                <table class="retro-table">
-                    <thead>
-                        <tr>
-                            <th>[YEAR]</th>
-                            <th>[POSITION]</th>
-                            <th>[COMPANY]</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2025-NOW</td>
-                            <td>ADMINISTRATIVE STAFF</td>
-                            <td>PT Netcom Solusi Persada</td>
-                        </tr>
-                        <tr>
-                            <td>2024-2025</td>
-                            <td>IT SUPPORT & TECHNICIAN</td>
-                            <td>PT Netcom Solusi Persada</td>
-                        </tr>
-                        <tr>
-                            <td>2024</td>
-                            <td>PRODUCTION OPERATOR</td>
-                            <td>PT Torabika Eka Semesta</td>
-                        </tr>
-                        <tr>
-                            <td>2021-2023</td>
-                            <td>TRUCK DRIVER ASSISTANT</td>
-                            <td>Logistics (Part-time)</td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div>
-        </div>
-        
-        <div id="achievements" class="window">
-            <div class="window-header" style="background: var(--aya-pink); color: black; border-bottom: 2px solid var(--aya-pink);">
-                <span>achievements.log</span>
-                <div style="border:1px solid var(--aya-pink); padding:0 5px;">x</div>
-            </div>
-            <div class="window-body" style="background: #111;">
-                <p style="margin-bottom: 10px; border-bottom: 1px dashed var(--acid-green); padding-bottom: 5px;">
-                    > LISTING_COMPLETED_QUESTS (CLICK_TO_VIEW_PROOF):
-                </p>
-                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                    <li style="margin-bottom: 10px;">
-                        <span class="unlock-badge" onclick="openCert('ETHICAL_HACKING', './assets/images/sertifikat1.jpg')">[UNLOCKED]</span> 
-                        Ethical Hacking Cert.
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span class="unlock-badge" onclick="openCert('DATA_SCIENCE', './assets/images/sertifikat2.jpg')">[UNLOCKED]</span> 
-                        Data Science (R Fundamental)
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span class="unlock-badge" onclick="openCert('C++_HTML_BASIC', './assets/images/sertifikat3.jpg')">[UNLOCKED]</span> 
-                        Sololearn C++
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span class="unlock-badge" onclick="openCert('C++_HTML_BASIC', './assets/images/sertifikat4.jpg')">[UNLOCKED]</span> 
-                        Sololearn HTML
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span class="unlock-badge" onclick="openCert('AI_WORKSHOP', './assets/images/sertifikat5.jpg')">[UNLOCKED]</span> 
-                        Workshop Industri 5.0 & AI
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span class="unlock-badge" onclick="openCert('UJI_KOMPETENSI', './assets/images/sertifikat6.jpg')">[UNLOCKED]</span> 
-                        Uji Kompetensi RPL
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="portfolio" class="window">
-            <div class="window-header">
-                <span>multimedia_center.exe</span>
-                <div>x</div>
-            </div>
-            
-            <div class="tab-header">
-                <button class="tab-btn active" onclick="openTab('video')">VIDEO</button>
-                <button class="tab-btn" onclick="openTab('spotify')">MUSIC</button>
-                <button class="tab-btn" onclick="openTab('carrd')">PROJECTS</button>
-            </div>
-
-            <div id="tab-video" class="tab-content active">
-                <p>> Playing: Nirvana - Love Buzz</p>
-                <div style="border: 2px solid var(--aya-pink); width: 100%; aspect-ratio: 16/9;">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZEh3mO9MPV0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div id="tab-spotify" class="tab-content">
-                <p>> Streaming from Spotify API...</p>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2hvxjH2Xa8LWZ8lXIEXlQd?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            </div>
-            
-            <div id="tab-carrd" class="tab-content">
-                <p style="margin-bottom:15px; border-bottom:1px dashed var(--acid-green); padding-bottom:5px;">
-                    > ACCESSING_PUBLIC_DIRECTORY...
-                </p>
-                
-                <div style="margin-bottom: 25px;">
-                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 10px; font-family: 'VT323';">
-                        [DIR: /WEB_DESIGN/CARRD/]
-                    </p>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                        
-                        <a href="https://anarkhism.carrd.co" target="_blank" style="text-decoration: none;">
-                            <div class="project-card">
-                                <div>
-                                    <strong style="color: inherit;">🎨 COMMISSION.CARRD 1.0</strong>
-                                    <div style="font-size: 0.8rem; opacity: 0.8;">Personal use</div>
-                                </div>
-                                <span style="font-weight:bold;">[VISIT]</span>
-                            </div>
-                        </a>
-
-                        <a href="https://obsessieve.carrd.co" target="_blank" style="text-decoration: none;">
-                            <div class="project-card">
-                                <div>
-                                    <strong style="color: inherit;">🎨 COMMISSION.CARRD 2.0</strong>
-                                    <div style="font-size: 0.8rem; opacity: 0.8;">Personal use</div>
-                                </div>
-                                <span style="font-weight:bold;">[VISIT]</span>
-                            </div>
-                        </a>
-
-                        <a href="https://mugshoot.carrd.co" target="_blank" style="text-decoration: none;">
-                            <div class="project-card">
-                                <div>
-                                    <strong style="color: inherit;">🎨 COMMISSION.CARRD 3.0</strong>
-                                    <div style="font-size: 0.8rem; opacity: 0.8;">Personal use</div>
-                                </div>
-                                <span style="font-weight:bold;">[VISIT]</span>
-                            </div>
-                        </a>
-
+              <a
+                href="https://obsessieve.carrd.co"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <div class="project-card">
+                  <div>
+                    <strong style="color: inherit"
+                      >🎨 COMMISSION.CARRD 2.0</strong
+                    >
+                    <div style="font-size: 0.8rem; opacity: 0.8">
+                      Personal use
                     </div>
+                  </div>
+                  <span style="font-weight: bold">[VISIT]</span>
                 </div>
+              </a>
 
-                <div>
-                    <p style="font-size: 0.8rem; color: #777; margin-bottom: 10px; font-family: 'VT323';">
-                        [DIR: /SOURCE_CODE/GITHUB_REPOS/]
-                    </p>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                        
-                        <a href="https://github.com/dokjaisme/project-cyber-y2k" target="_blank" style="text-decoration: none;">
-                            <div class="project-card">
-                                <div>
-                                    <strong style="color: inherit;">👾 DOKJAISME_OS_WEB</strong>
-                                    <div style="font-size: 0.8rem; opacity: 0.8;">HTML5 / CSS3 / JS Project</div>
-                                </div>
-                                <span style="font-weight:bold;">[CODE]</span>
-                            </div>
-                        </a>
-                        </div>
+              <a
+                href="https://mugshoot.carrd.co"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <div class="project-card">
+                  <div>
+                    <strong style="color: inherit"
+                      >🎨 COMMISSION.CARRD 3.0</strong
+                    >
+                    <div style="font-size: 0.8rem; opacity: 0.8">
+                      Personal use
+                    </div>
+                  </div>
+                  <span style="font-weight: bold">[VISIT]</span>
                 </div>
+              </a>
             </div>
-            </div>
+          </div>
 
-        <div id="contact" class="window">
-            <div class="window-header"><span>send_mail.exe</span><div>x</div></div>
-            <div class="window-body">
-                <div class="spam-sticker" style="top: 10%; right: 5%; font-size: 3rem; transform: rotate(15deg);">SPAM?</div>
-                <div class="spam-sticker" style="bottom: 30%; left: 5%; font-size: 2rem; transform: rotate(-10deg);">REPLY_ASAP</div>
-                
-                <form id="contactForm" style="position: relative; z-index: 2;">
-                    <label class="terminal-label">> IDENTIFY_YOURSELF:</label>
-                    <input type="text" placeholder="USER_NAME_HERE..." required>
-                    <label class="terminal-label">> TRANSMISSION_DATA:</label>
-                    <textarea rows="4" placeholder="TYPE_MESSAGE..." required></textarea>
-                    <button type="submit" class="retro-btn">>>> SEND_DATA_PACKET <<<</button>
-                </form>
-
-                <div style="margin-top: 25px; text-align: center; border-top: 2px dashed rgba(255,255,255,0.3); padding-top: 15px; position: relative; z-index: 2;">
-                    <p style="margin-bottom: 10px; color: white; font-size: 0.8rem;">[ CONNECT_VIA_NEURAL_NET ]</p>
-                    <a href="https://instagram.com/o.bakenji" target="_blank" class="social-link">INSTAGRAM</a>
-                    <a href="https://github.com/dokjaisme" target="_blank" class="social-link">GITHUB</a>
-                    <a href="assets/pdf/CV_ENJELIKA-DINDA-RAHMAWATI-OCR.pdf" target="_blank" class="preview">CV</a>
+          <div>
+            <p
+              style="
+                font-size: 0.8rem;
+                color: #777;
+                margin-bottom: 10px;
+                font-family: 'VT323';
+              "
+            >
+              [DIR: /SOURCE_CODE/GITHUB_REPOS/]
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <a
+                href="https://github.com/dokjaisme/project-cyber-y2k"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <div class="project-card">
+                  <div>
+                    <strong style="color: inherit">👾 DOKJAISME_OS_WEB</strong>
+                    <div style="font-size: 0.8rem; opacity: 0.8">
+                      HTML5 / CSS3 / JS Project
+                    </div>
+                  </div>
+                  <span style="font-weight: bold">[CODE]</span>
                 </div>
+              </a>
             </div>
+          </div>
         </div>
+      </div>
 
-<nav>
-    <div class="menu-sys-container">
+      <div id="contact" class="window">
+        <div class="window-header">
+          <span>send_mail.exe</span>
+          <div>x</div>
+        </div>
+        <div class="window-body">
+          <div
+            class="spam-sticker"
+            style="
+              top: 10%;
+              right: 5%;
+              font-size: 3rem;
+              transform: rotate(15deg);
+            "
+          >
+            SPAM?
+          </div>
+          <div
+            class="spam-sticker"
+            style="
+              bottom: 30%;
+              left: 5%;
+              font-size: 2rem;
+              transform: rotate(-10deg);
+            "
+          >
+            REPLY_ASAP
+          </div>
+          <!--requirement form-->
+          <form id="contactForm" style="position: relative; z-index: 2">
+            <label class="terminal-label">> IDENTIFY_YOURSELF:</label>
+            <input type="text" placeholder="USER_NAME_HERE..." required />
+            <label class="terminal-label">> TRANSMISSION_DATA:</label>
+            <textarea
+              rows="4"
+              placeholder="TYPE_MESSAGE..."
+              required
+            ></textarea>
+            <button type="submit" class="retro-btn">
+              >>> SEND_DATA_PACKET <<<
+            </button>
+          </form>
+
+          <div
+            style="
+              margin-top: 25px;
+              text-align: center;
+              border-top: 2px dashed rgba(255, 255, 255, 0.3);
+              padding-top: 15px;
+              position: relative;
+              z-index: 2;
+            "
+          >
+            <p style="margin-bottom: 10px; color: white; font-size: 0.8rem">
+              [ CONNECT_VIA_NEURAL_NET ]
+            </p>
+            <a
+              href="https://instagram.com/o.bakenji"
+              target="_blank"
+              class="social-link"
+              >INSTAGRAM</a
+            >
+            <a
+              href="https://github.com/dokjaisme"
+              target="_blank"
+              class="social-link"
+              >GITHUB</a
+            >
+            <a
+              href="assets/pdf/CV_ENJELIKA-DINDA-RAHMAWATI-OCR.pdf"
+              target="_blank"
+              class="preview"
+              >CV</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--requirement navigasi-->
+    <nav>
+      <div class="menu-sys-container">
         <button class="logo-btn" id="menuSysBtn">
-            <i class="fas fa-microchip"></i> DOKJAISME_OS
+          <i class="fas fa-microchip"></i> DOKJAISME_OS
         </button>
         <div id="menuDropdown" class="menu-dropdown">
-            <button onclick="window.location.reload();">RESTART_SYSTEM</button>
-            <button onclick="showCustomAlert('SHUTDOWN_INITIATED\\n\\nAccess_denied: Please close browser manually')" class="error-option">SHUTDOWN_TERMINAL</button>
+          <button onclick="window.location.reload();">RESTART_SYSTEM</button>
+          <button
+            onclick="showCustomAlert('SHUTDOWN_INITIATED\\n\\nAccess_denied: Please close browser manually')"
+            class="error-option"
+          >
+            SHUTDOWN_TERMINAL
+          </button>
         </div>
-    </div>
+      </div>
 
-    <div class="search-bar-container">
-        <input type="text" id="systemSearch" placeholder="> SEARCH_DIRECTORY..." class="terminal-input">
+      <div class="search-bar-container">
+        <input
+          type="text"
+          id="systemSearch"
+          placeholder="> SEARCH_DIRECTORY..."
+          class="terminal-input"
+        />
         <i class="fas fa-search search-icon"></i>
-    </div>
+      </div>
 
-    <div class="window-switcher">
-        <button class="window-btn" onclick="scrollToSection('about')" title="[1] BIO_DATA.TXT"><i class="fas fa-address-card"></i></button>
-        <button class="window-btn" onclick="scrollToSection('skills')" title="[2] STATS_MONITOR.EXE"><i class="fas fa-heartbeat"></i></button>
-        <button class="window-btn" onclick="scrollToSection('quest-log')" title="[3] ADVENTURE_LOG.DAT"><i class="fas fa-scroll"></i></button>
-        <button class="window-btn" onclick="scrollToSection('achievements')" title="[4] ACHIEVEMENTS.LOG"><i class="fas fa-trophy"></i></button>
-        <button class="window-btn" onclick="scrollToSection('portfolio')" title="[5] MULTIMEDIA_CENTER.EXE"><i class="fas fa-folder-open"></i></button>
-        <button class="window-btn" onclick="scrollToSection('contact')" title="[6] SEND_MAIL.EXE"><i class="fas fa-envelope"></i></button>
-    </div>
-    
-    <div id="clock-widget">00:00:00</div>
-</nav>
-<div class="decor-container">
-        <div class="side-marquee left">
-            <div class="track">/// SYSTEM_OVERLOAD /// CRITICAL_ERROR /// AESTHETIC_DETECTED /// </div>
-            <div class="track">/// SYSTEM_OVERLOAD /// CRITICAL_ERROR /// AESTHETIC_DETECTED /// </div>
+      <div class="window-switcher">
+        <button
+          class="window-btn"
+          onclick="scrollToSection('about')"
+          title="[1] BIO_DATA.TXT"
+        >
+          <i class="fas fa-address-card"></i>
+        </button>
+        <button
+          class="window-btn"
+          onclick="scrollToSection('skills')"
+          title="[2] STATS_MONITOR.EXE"
+        >
+          <i class="fas fa-heartbeat"></i>
+        </button>
+        <button
+          class="window-btn"
+          onclick="scrollToSection('quest-log')"
+          title="[3] ADVENTURE_LOG.DAT"
+        >
+          <i class="fas fa-scroll"></i>
+        </button>
+        <button
+          class="window-btn"
+          onclick="scrollToSection('achievements')"
+          title="[4] ACHIEVEMENTS.LOG"
+        >
+          <i class="fas fa-trophy"></i>
+        </button>
+        <button
+          class="window-btn"
+          onclick="scrollToSection('portfolio')"
+          title="[5] MULTIMEDIA_CENTER.EXE"
+        >
+          <i class="fas fa-folder-open"></i>
+        </button>
+        <button
+          class="window-btn"
+          onclick="scrollToSection('contact')"
+          title="[6] SEND_MAIL.EXE"
+        >
+          <i class="fas fa-envelope"></i>
+        </button>
+      </div>
+
+      <div id="clock-widget">00:00:00</div>
+    </nav>
+    <div class="decor-container">
+      <div class="side-marquee left">
+        <div class="track">
+          /// SYSTEM_OVERLOAD /// CRITICAL_ERROR /// AESTHETIC_DETECTED ///
         </div>
-        <div class="side-marquee right">
-            <div class="track">/// DON'T_PANIC /// KEEP_SCROLLING /// Y2K_VIBES_ONLY /// </div>
-            <div class="track">/// DON'T_PANIC /// KEEP_SCROLLING /// Y2K_VIBES_ONLY /// </div>
+        <div class="track">
+          /// SYSTEM_OVERLOAD /// CRITICAL_ERROR /// AESTHETIC_DETECTED ///
         </div>
-        <div class="sticker star" style="top: 15%; left: 5%;">✦</div>
-        <div class="sticker star" style="top: 25%; right: 10%;">★</div>
-        <div class="sticker text-deco" style="top: 40%; right: 5%;">システム</div>
-        <div class="sticker barcode" style="top: 10%; right: 20%;">|| █ || █ ||| █ || █</div>
-        <div class="sticker fake-popup" style="top: 20%; left: 8%;">
-            <div class="fp-header">WARNING</div><div class="fp-body">⚠️ TOXIC LEVELS</div>
+      </div>
+      <div class="side-marquee right">
+        <div class="track">
+          /// DON'T_PANIC /// KEEP_SCROLLING /// Y2K_VIBES_ONLY ///
         </div>
-        <div class="sticker fake-popup" style="bottom: 40%; right: 12%;">
-            <div class="fp-header">ERROR 404</div><div class="fp-body">❌ SLEEP NOT FOUND</div>
+        <div class="track">
+          /// DON'T_PANIC /// KEEP_SCROLLING /// Y2K_VIBES_ONLY ///
         </div>
+      </div>
+      <div class="sticker star" style="top: 15%; left: 5%">✦</div>
+      <div class="sticker star" style="top: 25%; right: 10%">★</div>
+      <div class="sticker text-deco" style="top: 40%; right: 5%">システム</div>
+      <div class="sticker barcode" style="top: 10%; right: 20%">
+        || █ || █ ||| █ || █
+      </div>
+      <div class="sticker fake-popup" style="top: 20%; left: 8%">
+        <div class="fp-header">WARNING</div>
+        <div class="fp-body">⚠️ TOXIC LEVELS</div>
+      </div>
+      <div class="sticker fake-popup" style="bottom: 40%; right: 12%">
+        <div class="fp-header">ERROR 404</div>
+        <div class="fp-body">❌ SLEEP NOT FOUND</div>
+      </div>
     </div>
 
     <div id="custom-alert-overlay">
-        <div class="fake-popup static-popup">
-            <div class="fp-header" style="justify-content: space-between; display: flex;">
-                <span>SYSTEM_MSG</span>
-                <div style="cursor: pointer;" onclick="closeCustomAlert()">X</div>
-            </div>
-            <div class="fp-body">
-                <p id="custom-alert-msg" style="margin: 20px 0; font-family: 'Courier New'; white-space: pre-line;">MESSAGE HERE</p>
-                <button class="retro-btn" onclick="closeCustomAlert()" style="padding: 5px; margin-top: 10px; font-size: 0.8rem;">ACKNOWLEDGE</button>
-            </div>
+      <div class="fake-popup static-popup">
+        <div
+          class="fp-header"
+          style="justify-content: space-between; display: flex"
+        >
+          <span>SYSTEM_MSG</span>
+          <div style="cursor: pointer" onclick="closeCustomAlert()">X</div>
         </div>
+        <div class="fp-body">
+          <p
+            id="custom-alert-msg"
+            style="
+              margin: 20px 0;
+              font-family: 'Courier New';
+              white-space: pre-line;
+            "
+          >
+            MESSAGE HERE
+          </p>
+          <button
+            class="retro-btn"
+            onclick="closeCustomAlert()"
+            style="padding: 5px; margin-top: 10px; font-size: 0.8rem"
+          >
+            ACKNOWLEDGE
+          </button>
+        </div>
+      </div>
     </div>
-    
+
     <div id="cert-overlay" onclick="closeCert()">
-        <div class="cert-window" onclick="event.stopPropagation()">
-            <div class="window-header" style="background: var(--aya-pink); color: black;">
-                <span id="cert-title">EVIDENCE_VIEWER.EXE</span>
-                <div style="cursor: pointer;" onclick="closeCert()">X</div>
-            </div>
-            <div class="window-body" style="background: #000; text-align: center; display: flex; flex-direction: column; align-items: center;">
-                <img id="cert-img" src="" alt="Proof of Coolness" style="max-width: 100%; max-height: 60vh; border: 2px solid var(--acid-green); box-shadow: 0 0 15px var(--acid-green);">
-                
-                <p style="margin-top: 15px; color: var(--acid-green); font-family: 'VT323'; font-size: 1.2rem;">
-                    > VERIFICATION_STATUS: <span class="blink" style="color: var(--aya-pink);">VALIDATED_REAL_NO_FEK_FEK</span>
-                </p>
-            </div>
+      <div class="cert-window" onclick="event.stopPropagation()">
+        <div
+          class="window-header"
+          style="background: var(--aya-pink); color: black"
+        >
+          <span id="cert-title">EVIDENCE_VIEWER.EXE</span>
+          <div style="cursor: pointer" onclick="closeCert()">X</div>
         </div>
+        <div
+          class="window-body"
+          style="
+            background: #000;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            id="cert-img"
+            src=""
+            alt="Proof of Coolness"
+            style="
+              max-width: 100%;
+              max-height: 60vh;
+              border: 2px solid var(--acid-green);
+              box-shadow: 0 0 15px var(--acid-green);
+            "
+          />
+
+          <p
+            style="
+              margin-top: 15px;
+              color: var(--acid-green);
+              font-family: 'VT323';
+              font-size: 1.2rem;
+            "
+          >
+            > VERIFICATION_STATUS:
+            <span class="blink" style="color: var(--aya-pink)"
+              >VALIDATED_REAL_NO_FEK_FEK</span
+            >
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="vhs-overlay"></div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

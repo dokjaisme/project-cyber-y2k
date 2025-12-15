@@ -1,387 +1,766 @@
 :root {
-    --bg-color: #050505;
-    --acid-green: #ccff00;
-    --aya-pink: #ff00ff;
-    --win-bg: #000000;
+  --bg-color: #050505;
+  --acid-green: #ccff00;
+  --aya-pink: #ff00ff;
+  --win-bg: #000000;
 }
 
 /* --- 1. GLOBAL & FONT UPGRADE --- */
 body {
-    background-color: var(--bg-color);
-    background-image:
-        linear-gradient(#1a1a1a 1px, transparent 1px),
-        linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
-    background-size: 20px 20px;
-    
-    color: var(--acid-green);
-    font-family: 'Courier New', monospace; 
-    margin: 0; padding: 0;
-    height: 100vh; overflow: hidden;
-    cursor: crosshair;
+  background-color: var(--bg-color);
+  background-image: linear-gradient(#1a1a1a 1px, transparent 1px),
+    linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+  background-size: 20px 20px;
+
+  color: var(--acid-green);
+  font-family: "Courier New", monospace;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  cursor: crosshair;
 }
 
-h1, h2, .glitch-text, .start-btn {
-    font-family: 'Press Start 2P', cursive;
-    text-transform: uppercase;
+h1,
+h2,
+.glitch-text,
+.start-btn {
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
 }
 
-.window-header, .retro-btn, .tab-btn, .fp-header, nav, #status-badge {
-    font-family: 'VT323', monospace;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.window-header,
+.retro-btn,
+.tab-btn,
+.fp-header,
+nav,
+#status-badge {
+  font-family: "VT323", monospace;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* --- 2. LAYOUT --- */
 .desktop-container {
-    opacity: 0; transition: opacity 0.5s;
-    height: 100%; overflow-y: auto;
-    box-sizing: border-box;
-    padding: 80px 50px 200px 50px; 
+  opacity: 0;
+  transition: opacity 0.5s;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 80px 50px 200px 50px;
 }
-.system-online .desktop-container { opacity: 1; }
+.system-online .desktop-container {
+  opacity: 1;
+}
 
 #boot-screen {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: black; z-index: 99999;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    padding: 20px; box-sizing: border-box;
-    font-family: 'VT323', monospace; font-size: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
 }
 
 /* --- 3. WINDOWS --- */
 .window {
-    background: var(--win-bg);
-    border: 3px solid var(--acid-green);
-    box-shadow: 8px 8px 0px var(--acid-green);
-    margin-bottom: 40px; position: relative;
-    max-width: 700px; margin-left: auto; margin-right: auto;
-    transition: transform 0.2s;
+  background: var(--win-bg);
+  border: 3px solid var(--acid-green);
+  box-shadow: 8px 8px 0px var(--acid-green);
+  margin-bottom: 40px;
+  position: relative;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.2s;
 }
 .window:hover {
-    transform: scale(1.01);
-    z-index: 50;
-    border-color: white;
+  transform: scale(1.01);
+  z-index: 50;
+  border-color: white;
 }
 .window-header {
-    background: var(--acid-green); color: black;
-    padding: 8px 15px; font-weight: bold;
-    display: flex; justify-content: space-between; border-bottom: 3px solid black;
+  background: var(--acid-green);
+  color: black;
+  padding: 8px 15px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid black;
 }
-.window-body { padding: 30px; }
+.window-body {
+  padding: 30px;
+}
 
-.quest-list { list-style: none; padding: 0; }
+.quest-list {
+  list-style: none;
+  padding: 0;
+}
 .quest-list li {
-    margin-bottom: 20px; border-left: 2px solid var(--aya-pink);
-    padding-left: 15px;
+  margin-bottom: 20px;
+  border-left: 2px solid var(--aya-pink);
+  padding-left: 15px;
 }
 .quest-date {
-    display: block; font-family: 'VT323', monospace; font-size: 1.1rem; color: #777;
+  display: block;
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  color: #777;
 }
 
-#contact, #achievements, #skills {
-    border-color: var(--aya-pink); box-shadow: 8px 8px 0px var(--aya-pink);
+#contact,
+#achievements,
+#skills {
+  border-color: var(--aya-pink);
+  box-shadow: 8px 8px 0px var(--aya-pink);
 }
-#contact .window-header, #skills .window-header, #achievements .window-header { background: var(--aya-pink); }
+#contact .window-header,
+#skills .window-header,
+#achievements .window-header {
+  background: var(--aya-pink);
+}
 
 /* --- 4. PROFILE & SKILLS --- */
 .profile-layout {
-    display: flex; gap: 30px; align-items: center; justify-content: center;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
 }
 .profile-pic {
-    width: 140px; height: 140px; border: 3px solid var(--acid-green);
-    object-fit: cover; filter: grayscale(100%);
-    transition: all 0.3s;
+  width: 140px;
+  height: 140px;
+  border: 3px solid var(--acid-green);
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.3s;
 }
 .profile-pic:hover {
-    transform: scale(1.2) rotate(-5deg);
-    border-color: var(--aya-pink);
-    filter: grayscale(0%) contrast(120%);
-    box-shadow: 0 0 20px var(--aya-pink);
+  transform: scale(1.2) rotate(-5deg);
+  border-color: var(--aya-pink);
+  filter: grayscale(0%) contrast(120%);
+  box-shadow: 0 0 20px var(--aya-pink);
 }
 
 .profile-layout h2 {
-    position: relative;
-    display: inline-block;
-    color: var(--aya-pink); -bottom:10px; line-height:1.5;
+  position: relative;
+  display: inline-block;
+  color: var(--aya-pink);
+  -bottom: 10px;
+  line-height: 1.5;
 }
 
 .profile-layout h2::after {
-    content: "◀ P1"; position: absolute; left: 50%; top: 73%;
-    transform: translateY(-50%); margin-left: 15px;
-    background: red; color: white; font-family: 'Press Start 2P'; font-size: 0.6rem;
-    padding: 10px 5px; border: 2px solid white; opacity: 0; pointer-events: none;
+  content: "◀ P1";
+  position: absolute;
+  left: 50%;
+  top: 73%;
+  transform: translateY(-50%);
+  margin-left: 15px;
+  background: red;
+  color: white;
+  font-family: "Press Start 2P";
+  font-size: 0.6rem;
+  padding: 10px 5px;
+  border: 2px solid white;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .window:hover h2::after {
-    opacity: 1; animation: blink 1s infinite step-end;
+  opacity: 1;
+  animation: blink 1s infinite step-end;
 }
 
 /* --- 5. CONTACT FORM --- */
 #contact .window-body {
-    background: repeating-linear-gradient(45deg, #000, #000 10px, #1a001a 10px, #1a001a 20px);
-    overflow: hidden;
+  background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 10px,
+    #1a001a 10px,
+    #1a001a 20px
+  );
+  overflow: hidden;
 }
 .terminal-label {
-    background: var(--aya-pink); color: black; padding: 2px 5px; font-weight: bold; display: inline-block; margin-bottom: 5px;
+  background: var(--aya-pink);
+  color: black;
+  padding: 2px 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
 }
-input, textarea {
-    width: 100%; padding: 10px; background: black;
-    border: 2px solid var(--aya-pink); color: var(--aya-pink);
-    font-family: 'Courier New', monospace; font-weight: bold;
-    margin-bottom: 15px; box-sizing: border-box;
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  background: black;
+  border: 2px solid var(--aya-pink);
+  color: var(--aya-pink);
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
-input:focus, textarea:focus {
-    background: #1a001a; box-shadow: 0 0 15px var(--aya-pink); outline: none;
+input:focus,
+textarea:focus {
+  background: #1a001a;
+  box-shadow: 0 0 15px var(--aya-pink);
+  outline: none;
 }
 .retro-btn {
-    width: 100%; background: var(--aya-pink); color: black;
-    padding: 10px; border: none; cursor: pointer; font-weight: bold;
-    animation: pulse 1s infinite;
+  width: 100%;
+  background: var(--aya-pink);
+  color: black;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  animation: pulse 1s infinite;
 }
 .social-link {
-    background: black; color: white; border: 1px solid white; padding: 8px 15px;
-    text-decoration: none; font-weight: bold; margin: 0 5px; font-size: 0.9rem;
-    box-shadow: 3px 3px 0 var(--acid-green); transition: 0.2s; display: inline-block;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  font-size: 0.9rem;
+  box-shadow: 3px 3px 0 var(--acid-green);
+  transition: 0.2s;
+  display: inline-block;
 }
-.social-link:hover { transform: translate(2px,2px); box-shadow:none; color:var(--acid-green);
+.social-link:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+  color: var(--acid-green);
 }
 .preview {
-    background: black; color: white; border: 1px solid white; padding: 8px 15px;
-    text-decoration: none; font-weight: bold; margin: 0 5px; font-size: 0.9rem;
-    box-shadow: 3px 3px 0 var(--acid-green); transition: 0.2s; display: inline-block;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  font-size: 0.9rem;
+  box-shadow: 3px 3px 0 var(--acid-green);
+  transition: 0.2s;
+  display: inline-block;
 }
-.preview:hover { transform: translate(2px,2px); box-shadow:none; color:var(--acid-green);
+.preview:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+  color: var(--acid-green);
 }
 
 /* --- 6. TASKBAR & TABS --- */
 /* GANTI STYLE NAV LAMA */
 nav {
-    position: fixed; bottom: 0; left: 0; width: 100%;
-    background: black; 
-    border-top: 3px solid var(--acid-green);
-    height: 50px; z-index: 10000; display: flex; align-items: center;
-    padding: 0 10px; box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  border-top: 3px solid var(--acid-green);
+  height: 50px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 /* 1. Logo/Menu System */
 .menu-sys-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .logo-btn {
-    background: var(--acid-green); color: black; border: 2px solid black;
-    padding: 5px 15px; cursor: pointer; display: flex; align-items: center; gap: 10px;
-    box-shadow: 4px 4px 0 var(--aya-pink); font-size: 0.8rem;
-    font-family: 'Press Start 2P', cursive;
-    text-transform: uppercase;
+  background: var(--acid-green);
+  color: black;
+  border: 2px solid black;
+  padding: 5px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 4px 4px 0 var(--aya-pink);
+  font-size: 0.8rem;
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
 }
-.logo-btn i { font-size: 1rem; }
-.logo-btn:active { transform: translate(2px, 2px); box-shadow: none; }
+.logo-btn i {
+  font-size: 1rem;
+}
+.logo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
 
 .menu-dropdown {
-    display: none;
-    position: absolute; bottom: 50px; left: 0;
-    background: black; border: 3px solid var(--acid-green);
-    box-shadow: 4px -4px 0 var(--aya-pink);
-    min-width: 200px; z-index: 10001;
-    flex-direction: column;
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  background: black;
+  border: 3px solid var(--acid-green);
+  box-shadow: 4px -4px 0 var(--aya-pink);
+  min-width: 200px;
+  z-index: 10001;
+  flex-direction: column;
 }
-.menu-dropdown.show { display: flex; }
+.menu-dropdown.show {
+  display: flex;
+}
 
 .menu-dropdown button {
-    background: none; color: var(--acid-green);
-    border: none; border-bottom: 1px dashed var(--aya-pink);
-    padding: 10px 15px; text-align: left; cursor: pointer;
-    font-family: 'VT323', monospace; font-size: 1.1rem;
-    text-transform: uppercase;
-    transition: background 0.1s;
+  background: none;
+  color: var(--acid-green);
+  border: none;
+  border-bottom: 1px dashed var(--aya-pink);
+  padding: 10px 15px;
+  text-align: left;
+  cursor: pointer;
+  font-family: "VT323", monospace;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: background 0.1s;
 }
-.menu-dropdown button:last-child { border-bottom: none; }
+.menu-dropdown button:last-child {
+  border-bottom: none;
+}
 .menu-dropdown button:hover {
-    background: var(--acid-green); color: black;
+  background: var(--acid-green);
+  color: black;
 }
-.menu-dropdown .error-option { color: var(--aya-pink); }
-
+.menu-dropdown .error-option {
+  color: var(--aya-pink);
+}
 
 /* 2. Search Bar */
 .search-bar-container {
-    flex: 1; 
-    position: relative;
-    margin: 0 15px;
-    max-width: 300px;
+  flex: 1;
+  position: relative;
+  margin: 0 15px;
+  max-width: 300px;
 }
 .terminal-input {
-    width: 100%; padding: 5px 10px 5px 35px; 
-    background: black;
-    border: 2px solid var(--acid-green); color: var(--acid-green);
-    font-family: 'VT323', monospace; font-weight: bold;
-    font-size: 1rem;
-    margin-bottom: 0; 
-    box-sizing: border-box;
+  width: 100%;
+  padding: 5px 10px 5px 35px;
+  background: black;
+  border: 2px solid var(--acid-green);
+  color: var(--acid-green);
+  font-family: "VT323", monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0;
+  box-sizing: border-box;
 }
 .terminal-input:focus {
-    background: #111; box-shadow: 0 0 10px var(--acid-green); outline: none;
+  background: #111;
+  box-shadow: 0 0 10px var(--acid-green);
+  outline: none;
 }
 .search-icon {
-    position: absolute; left: 10px; top: 50%;
-    transform: translateY(-50%);
-    color: var(--acid-green);
-    font-size: 0.9rem;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--acid-green);
+  font-size: 0.9rem;
 }
 
-
 /* 3. Window Switcher */
-.window-switcher { 
-    display: flex; gap: 5px; margin-right: 15px; 
+.window-switcher {
+  display: flex;
+  gap: 5px;
+  margin-right: 15px;
 }
 
 .window-btn {
-    background: black; 
-    color: var(--aya-pink); 
-    border: 2px solid var(--aya-pink); 
-    width: 35px; height: 35px; 
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.2s;
+  background: black;
+  color: var(--aya-pink);
+  border: 2px solid var(--aya-pink);
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s;
 }
 .window-btn:hover {
-    background: var(--aya-pink);
-    color: black;
-    box-shadow: 0 0 10px var(--aya-pink);
+  background: var(--aya-pink);
+  color: black;
+  box-shadow: 0 0 10px var(--aya-pink);
 }
 .window-btn:active {
-    transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 #clock-widget {
-    margin-left: auto; font-weight: bold; color: var(--acid-green); 
-    background: black; padding: 5px 10px; border: 2px solid var(--aya-pink);
-    font-family: 'VT323'; font-size: 1.5rem;
+  margin-left: auto;
+  font-weight: bold;
+  color: var(--acid-green);
+  background: black;
+  padding: 5px 10px;
+  border: 2px solid var(--aya-pink);
+  font-family: "VT323";
+  font-size: 1.5rem;
 }
 
-.tab-header { display: flex; background: #111; border-bottom: 2px solid var(--aya-pink); }
+.tab-header {
+  display: flex;
+  background: #111;
+  border-bottom: 2px solid var(--aya-pink);
+}
 .tab-btn {
-    flex: 1; padding: 10px; cursor: pointer; background: #222; color: #777; border: none; border-right: 2px solid black;
-    transition: all 0.3s;
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background: #222;
+  color: #777;
+  border: none;
+  border-right: 2px solid black;
+  transition: all 0.3s;
 }
 .tab-btn:hover {
-    background: #333; color: var(--acid-green); text-shadow: 0 0 5px var(--acid-green);
+  background: #333;
+  color: var(--acid-green);
+  text-shadow: 0 0 5px var(--acid-green);
 }
-.tab-btn.active { background: var(--aya-pink); color: black; }
-.tab-content { display: none; padding: 20px; }
-.tab-content.active { display: block; }
+.tab-btn.active {
+  background: var(--aya-pink);
+  color: black;
+}
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+.tab-content.active {
+  display: block;
+}
 
 .project-card {
-    background: #111; border: 1px solid var(--aya-pink); padding: 10px;
-    transition: 0.2s; display: flex; align-items: center; justify-content: space-between; color: var(--acid-green);
+  background: #111;
+  border: 1px solid var(--aya-pink);
+  padding: 10px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--acid-green);
 }
-.project-card:hover { background: var(--aya-pink); color: black; cursor: pointer; }
+.project-card:hover {
+  background: var(--aya-pink);
+  color: black;
+  cursor: pointer;
+}
 
 /* --- 7. DECORATION & ANIMATION --- */
 .side-marquee {
-    position: fixed; top: 0; bottom: 0; width: 35px;
-    background: black; border-left: 2px solid var(--acid-green); border-right: 2px solid var(--acid-green);
-    z-index: 950; overflow: hidden; display: flex; flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 35px;
+  background: black;
+  border-left: 2px solid var(--acid-green);
+  border-right: 2px solid var(--acid-green);
+  z-index: 950;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.side-marquee.right { right: 0; border-left: 2px solid var(--aya-pink); border-right: none;}
+.side-marquee.right {
+  right: 0;
+  border-left: 2px solid var(--aya-pink);
+  border-right: none;
+}
 .side-marquee .track {
-    writing-mode: vertical-rl; text-orientation: mixed; white-space: nowrap;
-    color: var(--acid-green); font-weight: bold; animation: scrollV 10s linear infinite; opacity: 0.8; padding: 10px 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+  color: var(--acid-green);
+  font-weight: bold;
+  animation: scrollV 10s linear infinite;
+  opacity: 0.8;
+  padding: 10px 0;
 }
-.side-marquee.right .track { color: var(--aya-pink); animation-direction: reverse; }
+.side-marquee.right .track {
+  color: var(--aya-pink);
+  animation-direction: reverse;
+}
 
-@keyframes scrollV { 0% {transform: translateY(0);} 100% {transform: translateY(-100%);} }
-@keyframes blink { 0%, 100% {opacity:1;} 50% {opacity:0;} }
-@keyframes pulse { 0% {box-shadow: 5px 5px 0 white;} 50% {box-shadow: 5px 5px 0 var(--acid-green);} 100% {box-shadow: 5px 5px 0 white;} }
+@keyframes scrollV {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 5px 5px 0 white;
+  }
+  50% {
+    box-shadow: 5px 5px 0 var(--acid-green);
+  }
+  100% {
+    box-shadow: 5px 5px 0 white;
+  }
+}
 
-.sticker { position: absolute; pointer-events: none; z-index: -1; font-weight: bold; color: rgba(204,255,0,0.3); }
-.star { font-size: 3rem; animation: spin 10s infinite linear; }
-.text-deco { font-size: 3rem; transform: rotate(90deg); opacity: 0.2; font-weight: 900; }
+.sticker {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  font-weight: bold;
+  color: rgba(204, 255, 0, 0.3);
+}
+.star {
+  font-size: 3rem;
+  animation: spin 10s infinite linear;
+}
+.text-deco {
+  font-size: 3rem;
+  transform: rotate(90deg);
+  opacity: 0.2;
+  font-weight: 900;
+}
 
 .fake-popup {
-    position: absolute; width: 150px; background: white; border: 2px solid black;
-    box-shadow: 4px 4px 0 rgba(0,0,0,0.5); z-index: 920;
-    animation: float 5s infinite ease-in-out;
+  position: absolute;
+  width: 150px;
+  background: white;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  z-index: 920;
+  animation: float 5s infinite ease-in-out;
 }
-.fp-header { background: red; color: white; padding: 2px; font-size: 0.8rem; border-bottom: 2px solid black; }
-.fp-body { padding: 10px; color: black; font-size: 0.8rem; font-weight: bold; text-align: center; }
+.fp-header {
+  background: red;
+  color: white;
+  padding: 2px;
+  font-size: 0.8rem;
+  border-bottom: 2px solid black;
+}
+.fp-body {
+  padding: 10px;
+  color: black;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+}
 
-@keyframes float { 0%, 100% {transform:translateY(0);} 50% {transform:translateY(-15px);} }
-@keyframes spin { 100% {transform:rotate(360deg);} }
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 body::after {
-    content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
-    background-size: 100% 4px; z-index: 999; pointer-events: none;
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 4px;
+  z-index: 999;
+  pointer-events: none;
 }
 .vhs-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif');
-    background-size: cover; opacity: 0.05; pointer-events: none; z-index: 998; mix-blend-mode: screen;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-size: cover;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 998;
+  mix-blend-mode: screen;
 }
-.decor-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.decor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
 
 @media (max-width: 768px) {
-    .profile-layout { flex-direction: column; text-align: center; }
-    .desktop-container { padding: 50px 20px 100px 20px; }
-    .side-marquee { display: none; }
+  .profile-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .desktop-container {
+    padding: 50px 20px 100px 20px;
+  }
+  .side-marquee {
+    display: none;
+  }
 }
 
 /* ARCADE STATS (FINAL) */
 .arcade-stats-container {
-  background-color: #0c0c14; border: 4px solid #5d275d;
-  padding: 20px; font-family: 'Press Start 2P', cursive; color: #ff77a8;
-  width: 100%; max-width: 500px; margin: 0 auto;
-  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); border-radius: 10px; box-sizing: border-box;
+  background-color: #0c0c14;
+  border: 4px solid #5d275d;
+  padding: 20px;
+  font-family: "Press Start 2P", cursive;
+  color: #ff77a8;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 .arcade-header {
-  text-align: center; color: #ff00ff; text-shadow: 2px 2px #000;
-  margin-bottom: 20px; font-size: 1rem; border-bottom: 2px dashed #555;
-  padding-bottom: 10px; line-height: 1.5;
+  text-align: center;
+  color: #ff00ff;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border-bottom: 2px dashed #555;
+  padding-bottom: 10px;
+  line-height: 1.5;
 }
 
-.stat-row { margin-bottom: 15px; }
-.stat-info { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; font-size: 0.7rem; }
-.heart { color: #ff0055; }
-.value { color: #00ffff; margin-left: auto; }
-.progress-bar { height: 15px; background-color: #333; border: 2px solid #fff; position: relative; padding: 2px; }
+.stat-row {
+  margin-bottom: 15px;
+}
+.stat-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  font-size: 0.7rem;
+}
+.heart {
+  color: #ff0055;
+}
+.value {
+  color: #00ffff;
+  margin-left: auto;
+}
+.progress-bar {
+  height: 15px;
+  background-color: #333;
+  border: 2px solid #fff;
+  position: relative;
+  padding: 2px;
+}
 .fill {
-  height: 100%; background: repeating-linear-gradient(90deg, #00ff00, #00ff00 10px, #000 10px, #000 12px);
-  box-shadow: 0 0 5px #00ff00; transition: width 1s ease-in-out;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #00ff00,
+    #00ff00 10px,
+    #000 10px,
+    #000 12px
+  );
+  box-shadow: 0 0 5px #00ff00;
+  transition: width 1s ease-in-out;
 }
 .special .fill {
-  background: repeating-linear-gradient(90deg, #ff00ff, #ff00ff 10px, #000 10px, #000 12px);
+  background: repeating-linear-gradient(
+    90deg,
+    #ff00ff,
+    #ff00ff 10px,
+    #000 10px,
+    #000 12px
+  );
   box-shadow: 0 0 10px #ff00ff;
 }
-.arcade-footer { text-align: center; margin-top: 20px; font-size: 0.6rem; color: #aaa; }
-.blink { animation: blinker 1s linear infinite; }
-@keyframes blinker { 50% { opacity: 0; } }
+.arcade-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.6rem;
+  color: #aaa;
+}
+.blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
 
 /* STICKER DECORATION */
 .spam-sticker {
-    position: absolute; color: rgba(204, 255, 0, 0.2);
-    font-family: 'Press Start 2P', cursive; font-weight: bold;
-    z-index: 0; pointer-events: none; user-select: none; filter: blur(1px);
+  position: absolute;
+  color: rgba(204, 255, 0, 0.2);
+  font-family: "Press Start 2P", cursive;
+  font-weight: bold;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  filter: blur(1px);
 }
 
 /* === CUSTOM ALERT MODAL STYLES (NEW!) === */
 #custom-alert-overlay {
-    display: none; /* Default ngumpet */
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7); z-index: 999999;
-    align-items: center; justify-content: center;
+  display: none; /* Default ngumpet */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999999;
+  align-items: center;
+  justify-content: center;
 }
 
 .static-popup {
-    position: relative; width: 350px; /* Lebih lebar dr sticker biasa */
-    animation: none; /* Gak goyang2 */
-    box-shadow: 10px 10px 0 rgba(0,0,0,0.5);
-    background: white;
+  position: relative;
+  width: 350px; /* Lebih lebar dr sticker biasa */
+  animation: none; /* Gak goyang2 */
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+  background: white;
 }
 /* Paksa text body popup jadi hitam biar kebaca */
-.static-popup .fp-body { color: black; }
+.static-popup .fp-body {
+  color: black;
+}
 
 /* ============================
    CERTIFICATE VIEWER & GLOW
@@ -389,104 +768,133 @@ body::after {
 
 /* 1. Tombol [UNLOCKED] biar bisa di-klik & glowing */
 .unlock-badge {
-    color: var(--aya-pink); /* Warna asli Pink */
-    cursor: pointer;
-    font-weight: bold;
-    margin-right: 5px;
-    transition: all 0.2s ease;
-    display: inline-block;
+  color: var(--aya-pink); /* Warna asli Pink */
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 5px;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
 /* Efek Hover NEON */
 .unlock-badge:hover {
-    color: #fff; /* Teks jadi putih pas disorot */
-    text-shadow: 
-        0 0 5px #ff00ff, 
-        0 0 10px #ff00ff, 
-        0 0 20px #ff00ff, 
-        0 0 40px #ff00ff; /* Glow Pink Kuat */
-    transform: scale(1.1); /* Agak mumbul dikit */
+  color: #fff; /* Teks jadi putih pas disorot */
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff,
+    0 0 40px #ff00ff; /* Glow Pink Kuat */
+  transform: scale(1.1); /* Agak mumbul dikit */
 }
 
 /* 2. Overlay Gelap buat Sertifikat */
 #cert-overlay {
-    display: none; /* Default ngumpet */
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Latar item transparan dikit */
-    z-index: 9999999; /* Paling atas di atas segalanya */
-    align-items: center; justify-content: center;
-    backdrop-filter: blur(5px); /* Efek blur background di belakangnya */
+  display: none; /* Default ngumpet */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Latar item transparan dikit */
+  z-index: 9999999; /* Paling atas di atas segalanya */
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px); /* Efek blur background di belakangnya */
 }
 
 /* 3. Jendela Sertifikatnya */
 .cert-window {
-    width: 90%; 
-    max-width: 800px; /* Maksimal segini biar ga kegedean */
-    background: black;
-    border: 2px solid var(--aya-pink);
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); /* Shadow pink luas */
-    animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi muncul mental */
+  width: 90%;
+  max-width: 800px; /* Maksimal segini biar ga kegedean */
+  background: black;
+  border: 2px solid var(--aya-pink);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); /* Shadow pink luas */
+  animation: popUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi muncul mental */
 }
 
 /* Animasi Mental */
 @keyframes popUp {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* --- 8. SCROLL TARGET EFFECT --- */
 .nav-target-glow {
-    animation: targetGlow 0.5s 2; /* 2x kedip */
+  animation: targetGlow 0.5s 2; /* 2x kedip */
 }
 
 @keyframes targetGlow {
-    0% { border-color: white; box-shadow: 0 0 15px white, 8px 8px 0px var(--acid-green); }
-    50% { border-color: var(--acid-green); box-shadow: 0 0 5px transparent, 8px 8px 0px var(--acid-green); }
-    100% { border-color: white; box-shadow: 0 0 15px white, 8px 8px 0px var(--acid-green); }
+  0% {
+    border-color: white;
+    box-shadow: 0 0 15px white, 8px 8px 0px var(--acid-green);
+  }
+  50% {
+    border-color: var(--acid-green);
+    box-shadow: 0 0 5px transparent, 8px 8px 0px var(--acid-green);
+  }
+  100% {
+    border-color: white;
+    box-shadow: 0 0 15px white, 8px 8px 0px var(--acid-green);
+  }
 }
 
 /* Gaya khusus untuk window yang pakai shadow pink (#portfolio, #contact, #quest-log) */
-#portfolio.nav-target-glow, #contact.nav-target-glow, #quest-log.nav-target-glow {
-    animation: targetGlowPink 0.5s 2;
+#portfolio.nav-target-glow,
+#contact.nav-target-glow,
+#quest-log.nav-target-glow {
+  animation: targetGlowPink 0.5s 2;
 }
 
 @keyframes targetGlowPink {
-    0% { border-color: white; box-shadow: 0 0 15px white, 8px 8px 0px var(--aya-pink); }
-    50% { border-color: var(--aya-pink); box-shadow: 0 0 5px transparent, 8px 8px 0px var(--aya-pink); }
-    100% { border-color: white; box-shadow: 0 0 15px white, 8px 8px 0px var(--aya-pink); }
+  0% {
+    border-color: white;
+    box-shadow: 0 0 15px white, 8px 8px 0px var(--aya-pink);
+  }
+  50% {
+    border-color: var(--aya-pink);
+    box-shadow: 0 0 5px transparent, 8px 8px 0px var(--aya-pink);
+  }
+  100% {
+    border-color: white;
+    box-shadow: 0 0 15px white, 8px 8px 0px var(--aya-pink);
+  }
 }
 
 /* Tambahkan atau pastikan ini ada di bagian bawah file style.css Anda */
 
 /* --- NEW: TABLE STYLES FOR QUEST LOG --- */
 .retro-table {
-    width: 100%;
-    border-collapse: collapse; /* Hilangkan batas ganda */
-    font-family: 'VT323', monospace;
-    font-size: 1rem;
-    color: var(--acid-green);
-    margin-top: 15px;
+  width: 100%;
+  border-collapse: collapse; /* Hilangkan batas ganda */
+  font-family: "VT323", monospace;
+  font-size: 1rem;
+  color: var(--acid-green);
+  margin-top: 15px;
 }
 
-.retro-table th, .retro-table td {
-    padding: 8px 10px;
-    /* Border dashed pink seperti divider */
-    border: 1px dashed var(--aya-pink); 
-    text-align: left;
-    text-transform: uppercase;
+.retro-table th,
+.retro-table td {
+  padding: 8px 10px;
+  /* Border dashed pink seperti divider */
+  border: 1px dashed var(--aya-pink);
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .retro-table th {
-    /* Header dibikin warna kebalikan biar menonjol */
-    background: var(--acid-green);
-    color: black;
-    font-family: 'Press Start 2P', cursive; /* Font Header beda */
-    font-size: 0.7rem;
-    /* Garis bawah lebih tebal */
-    border-bottom: 3px solid var(--aya-pink);
+  /* Header dibikin warna kebalikan biar menonjol */
+  background: var(--acid-green);
+  color: black;
+  font-family: "Press Start 2P", cursive; /* Font Header beda */
+  font-size: 0.7rem;
+  /* Garis bawah lebih tebal */
+  border-bottom: 3px solid var(--aya-pink);
 }
 
 .retro-table tbody tr:hover {
-    background: #002200; /* Background hijau gelap saat kursor lewat */
-    color: white; /* Font jadi putih */
+  background: #002200; /* Background hijau gelap saat kursor lewat */
+  color: white; /* Font jadi putih */
 }
