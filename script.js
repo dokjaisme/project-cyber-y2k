@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Set pesan di Custom Alert
             if(alertMsg) {
-                alertMsg.innerText = `DATA PACKET SENT!\n\nTo: Yuidust\nFrom: ${senderName}\nStatus: 200 OK (DELIVERED)`;
+                alertMsg.innerText = `DATA PACKET SENT!\n\nTo: DOKJAISME\nFrom: ${senderName}\nStatus: 200 OK (DELIVERED)`;
             }
             
             // Munculin Overlay

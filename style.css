@@ -455,3 +455,38 @@ body::after {
     50% { border-color: var(--aya-pink); box-shadow: 0 0 5px transparent, 8px 8px 0px var(--aya-pink); }
     100% { border-color: white; box-shadow: 0 0 15px white, 8px 8px 0px var(--aya-pink); }
 }
+
+/* Tambahkan atau pastikan ini ada di bagian bawah file style.css Anda */
+
+/* --- NEW: TABLE STYLES FOR QUEST LOG --- */
+.retro-table {
+    width: 100%;
+    border-collapse: collapse; /* Hilangkan batas ganda */
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    color: var(--acid-green);
+    margin-top: 15px;
+}
+
+.retro-table th, .retro-table td {
+    padding: 8px 10px;
+    /* Border dashed pink seperti divider */
+    border: 1px dashed var(--aya-pink); 
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.retro-table th {
+    /* Header dibikin warna kebalikan biar menonjol */
+    background: var(--acid-green);
+    color: black;
+    font-family: 'Press Start 2P', cursive; /* Font Header beda */
+    font-size: 0.7rem;
+    /* Garis bawah lebih tebal */
+    border-bottom: 3px solid var(--aya-pink);
+}
+
+.retro-table tbody tr:hover {
+    background: #002200; /* Background hijau gelap saat kursor lewat */
+    color: white; /* Font jadi putih */
+}
